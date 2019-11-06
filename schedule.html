@@ -1,0 +1,42 @@
+<HTML>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<BODY bgcolor="cyan">
+<form method="POST" action="">
+	<h2>Schedule</h2>
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>f_no</th>
+    <th>task</th>
+  </tr>
+  {% for r in res %}
+  <tr>
+  	{% for s in r %}
+  	<td> {{s}}</td>
+   {% endfor %}
+  
+  </tr>
+  {% endfor %}
+</table>
+</form>
+</BODY>
+</HTML>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<form method="POST" action="">
+</form>
+<h2>Flight Details</h2>
+
+<table>
+  <tr>
+    <th>f_no</th>
+    <th>p_no</th>
+    <th>r_no</th>
+    <th>run_no</th>
+    <th>landing</th>
+    <th>leaving</th>
+    <th>arrival</th>
+    <th>duration</th>
+    <th>departure</th>
+  </tr>
+  {% for r in res %}
+  <tr>
+  	{% for s in r %}
+  	<td> {{s}}</td>
+   {% endfor %}
+  
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

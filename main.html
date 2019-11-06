@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<form method="POST" action="">
+<div class="sidenav">
+  <input name = "Flights Info" type="submit" value ="Flight Info"> <br> <br>
+  <input name = "Routes Info" type="submit" value ="Routes Info"> <br> <br>
+  <input name = "Runways Info" type="submit" value ="Runways Info"> <br> <br>
+  <input name = "Add Flight Details" type="submit" value ="Add Flight Details"> <br> <br>
+  <input name = "Arrival" type="submit" value ="Arrival"> <br> <br>
+  <input name = "Landing" type="submit" value ="Landing"> <br> <br>
+  <input name = "Shifting" type="submit" value ="Shifting"> <br> <br>
+  <input name = "Leaving" type="submit" value ="Leaving"> <br> <br>
+  <input name = "Takeoff" type="submit" value ="Takeoff"> <br> <br>
+  <input name = "Departure" type="submit" value ="Departure"> <br> <br>
+  <input name = "Add Runway" type="submit" value ="Add Runway"> <br> <br>
+  <input name = "Add Route" type="submit" value ="Add Route"> <br> <br>
+</div>
+</form>
+<div class="main" bgcolor="cyan">
+  <h2>Schedule</h2>
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>f_no</th>
+    <th>task</th>
+  </tr>
+  {% for r in res %}
+  <tr>
+    {% for s in r %}
+    <td> {{s}}</td>
+   {% endfor %}
+  
+  </tr>
+  {% endfor %}
+</table>
+</div>
+</body>
+</html>
